@@ -130,6 +130,28 @@ namespace CSharpEstablishedTactics
             foreach (var book in selected)
                 Console.WriteLine("{0}{1}", book.Title, book.Price);
         }
+        
+        internal static void OtherProcessing()
+        {
+            //コレクションから別のコレクションを生成する
+            List<string> words = new List<string>() {
+            "Microsoft",
+            "Apple",
+            "Google",
+            "Facebook",
+            "Amazon",
+            "Oracle,"
+            };
+            //List<string> lowers = new List<string>();
+            //foreach(string name in words)
+            //{
+            //    lowers.Add(name.ToLower());
+            //}
+            var lowers = words.Select(s => s.ToLower()).ToArray();
+            var title = Book.Books().Select(x => x.Title);
+        }
+
+
 
     }
 }
